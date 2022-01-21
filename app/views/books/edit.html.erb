@@ -1,4 +1,4 @@
-<h2>Editing Book</h2>
+<h1>Editing Book</h1>
 <%= form_with model: @book, url: update_book_path(@book.id), method: :patch, local:true do |f| %>
 <%= notice %>
 
@@ -11,17 +11,24 @@
   </ul>
 <% end %>
 
- <p>Title</p>
- <%= f.text_field :title %>
+<div class="field">
+    <label for="book_title">Title</label>
+    <br><%= f.text_field :title %></br>
+  </div>
 
- <p>Body</p>
- <%= f.text_area :body %>
+<div class="field">
+    <label for="book_body">Body</label>
+   <br><%= f.text_area :body %></br>
+  </div>
 
- <br><%= f.submit 'Update Book' %></br>
+ <div class="action">
+    <%= f.submit 'Update Book' %>
+  </div>
 
  <span>
   <%= link_to "Show", book_path(@book) %>
  </span>
+ |
  <span>
   <%= link_to "Back", "/books" %>
  </span>
